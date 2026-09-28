@@ -3,7 +3,7 @@ services:
     container_name: kupipodariday-frontend
     build: ./frontend
     ports:
-      - "3000:80"
+      - "127.0.0.1:3002:80"
     restart: unless-stopped
     networks:
       - frontend-network
@@ -12,7 +12,7 @@ services:
     container_name: kupipodariday-backend
     build: ./backend
     ports:
-      - "3001:3000"
+      - "127.0.0.1:3003:3000"
     env_file:
       - ./.env
     depends_on:
